@@ -1,201 +1,332 @@
-*
-{
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-body
-{
+body {
     font-family: sans-serif;
     background-color: #222831;
     color: #00ADB5;
+}
 
-    .title-container
-    {
-        text-align: center;
-        position: absolute;
+.split {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
 
-        top: 0%;
-        left: 50%;
-        transform: translate(-50%, 0%);
+.top {
+    top: 0;
+    height: 10%;
+}
 
-        .title
-        {
-            margin-bottom: 8px;
-            position: relative;
+.bottom {
+    bottom: 0;
+    height: 90%;
+}
 
-            letter-spacing: 5px;
+.title-container {
+    text-align: center;
+    position: absolute;
 
-            span
-            {
-                color: #EEEEEE;
-            }
-        }
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.title {
+    margin-bottom: 8px;
+    position: relative;
+
+    letter-spacing: 5px;
+
+    span {
+        color: #EEEEEE;
     }
+}
 
-    .status-action
+.status-action {
+    width: 20%;
+    font-size: 20px; 
+}
+
+.status {
+    position: absolute;
+    padding: 25px;
+    top: 5%;
+    left: 5%;
+    transform: translate(-5%, 5%);
+}
+
+.x-status {
+    position: absolute;
+    padding: 25px;
+    top: 15%;
+    left: 5%;
+    transform: translate(-5%, 5%);
+}
+
+.o-status {
+    position: absolute;
+    padding: 25px;
+    top: 25%;
+    left: 5%;
+    transform: translate(-5%, 5%);
+}
+
+.games-played {
+    position: absolute;
+    padding: 25px;
+    top: 35%;
+    left: 5%;
+    transform: translate(-5%, 5%);
+}
+
+.container
+{
+    position: absolute;
+    background-color: #393E46;
+    padding: 50px;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.game-grid {
+    //margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    grid-gap: 15px;
+
+    background: #00ADB5;
+}
+
+.game-cell
+{
+    height: 150px;
+    width: 150px;
+
+    background: #393E46;
+
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    
+    cursor: pointer;
+}
+
+.x::after
+{
+    content: "x";//"×";
+    font-size: 150px;
+
+    animation: x-animation 0.25s 1;
+
+    @keyframes x-animation
     {
-        font-size: 20px;
-        .status
-        {
-            position: absolute;
-            padding: 25px;
-            top: 5%;
-            left: 5%;
-            transform: translate(-5%, 5%);
-        }
-
-        .x-status
-        {
-            position: absolute;
-            padding: 25px;
-            top: 15%;
-            left: 5%;
-            transform: translate(-5%, 5%);
-        }
-
-        .o-status
-        {
-            position: absolute;
-            padding: 25px;
-            top: 25%;
-            left: 5%;
-            transform: translate(-5%, 5%);
-        }
-
-        .games-played
-        {
-            position: absolute;
-            padding: 25px;
-            top: 35%;
-            left: 5%;
-            transform: translate(-5%, 5%);
-        }
-
-        .action
-        {
-            
-            .reset
-            {
-                position: absolute;
-                padding: 25px;
-                padding-left: 45px;
-                padding-right: 45px;
-                top: 5%;
-                right: 5%;
-                transform: translate(-5%, 5%);
-                background-color: #393E46;
-
-                cursor: pointer;
-
-                border-radius: 10px;
-            }
-
-            .reset:hover
-            {
-                background-color: #00ADB5;
-                color: #393E46;  
-            }
-
-            .play-again
-            {
-                position: absolute;
-                padding: 25px;
-                top: 20%;
-                right: 5%;
-                transform: translate(-5%, -20%);
-                background-color: #393E46;
-
-                cursor: pointer;
-
-                border-radius: 10px;
-            }
-
-            .play-again:hover
-            {
-                background-color: #00ADB5;
-                color: #393E46;  
-            }
-        }
+        from{font-size: 0px;}
+        to{font-size: 155px;}
     }
+}
 
-    .container
+.o::after
+{
+    content: "o";//"○";
+    color: #EEEEEE;
+    font-size: 150px;
+
+    animation: o-animation 0.25s 1;
+
+    @keyframes o-animation
+    {
+        from{font-size: 0px;}
+        to{font-size: 155   px;}
+    }
+}
+
+.won::after
+{
+    color: #EF4F4F;
+}
+
+.action
+{
+    .reset
     {
         position: absolute;
-        background-color: #393E46;
-        padding: 50px;
+        padding: 25px;
+        padding-left: 45px;
+        padding-right: 45px;
         top: 5%;
-        left: 50%;
-        transform: translate(-50%, 0%);
+        right: 5%;
+        transform: translate(-5%, 5%);
+        background-color: #393E46;
 
-        border-radius: 25px;
+        cursor: pointer;
 
-        display: flex;
-        justify-content: center;
+        border-radius: 10px;
+    }
 
-        .game-grid
+    .reset:hover
+    {
+        background-color: #00ADB5;
+        color: #393E46;  
+    }
+
+    .play-again
+    {
+        position: absolute;
+        padding: 25px;
+        top: 20%;
+        right: 5%;
+        transform: translate(-5%, -20%);
+        background-color: #393E46;
+
+        cursor: pointer;
+
+        border-radius: 10px;
+    }
+
+    .play-again:hover
+    {
+        background-color: #00ADB5;
+        color: #393E46;  
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .game-cell {
+        height: 100px;
+        width: 100px;
+    }
+
+    .status-action {
+        font-size: 20px; 
+    }
+    
+    .status {
+        left: 0%;
+        width: 150px;
+        word-wrap: break-word;
+    }
+    
+    .x-status {
+        left: 0%;
+        width: 150px;
+        word-wrap: break-word;
+    }
+    
+    .o-status {
+        left: 0%;
+        width: 150px;
+        word-wrap: break-word;
+    }
+    
+    .games-played {
+        left: 0%;
+        width: 150px;
+        word-wrap: break-word;
+    }
+
+    .action
+    {
+        .reset
         {
-            margin-top: 50px;
+            position: absolute;
+            padding: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            top: 5%;
+            right: 5%;
+            transform: translate(-5%, 5%);
+            background-color: #393E46;
 
-            display: grid;
+            cursor: pointer;
 
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            text-align: center;
+            width: 100px;
+            word-wrap: break-word;
 
-            grid-gap: 15px;
-
-            background: #00ADB5;
-
-            .game-cell
-            {
-                height: 200px;
-                width: 200px;
-
-                background: #393E46;
-
-                display: flex;
-                justify-content: center;
-
-                align-items: center;
-                
-                cursor: pointer;
-            }
-
-            .x::after
-            {
-                content: "×";
-                font-size: 200px;
-
-                animation: x-animation 0.25s 1;
-
-                @keyframes x-animation
-                {
-                    from{font-size: 0px;}
-                    to{font-size: 200px;}
-                }
-            }
-
-            .o::after
-            {
-                content: "○";
-                color: #EEEEEE;
-                font-size: 225px;
-
-                animation: o-animation 0.25s 1;
-
-                @keyframes o-animation
-                {
-                    from{font-size: 0px;}
-                    to{font-size: 200px;}
-                }
-            }
-
-            .won::after
-            {
-                color: #EF4F4F;
-            }
+            border-radius: 10px;
         }
+
+        .reset:hover
+        {
+            background-color: #00ADB5;
+            color: #393E46;  
+        }
+
+        .play-again
+        {
+            position: absolute;
+            padding: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            top: 15%;
+            right: 5%;
+            transform: translate(-5%, 15%);
+            background-color: #393E46;
+
+            cursor: pointer;
+
+            text-align: center;
+            width: 100px;
+            word-wrap: break-word;
+
+            border-radius: 10px;
+        }
+
+        .play-again:hover
+        {
+            background-color: #00ADB5;
+            color: #393E46;  
+        }
+    }
+
+    .x::after
+    {
+        content: "x";//"×";
+        font-size: 100px;
+
+        animation: x-animation 0.25s 1;
+
+        @keyframes x-animation
+        {
+            from{font-size: 0px;}
+            to{font-size: 105px;}
+        }
+    }
+
+    .o::after
+    {
+        content: "o";//"○";
+        color: #EEEEEE;
+        font-size: 100px;
+
+        animation: o-animation 0.25s 1;
+
+        @keyframes o-animation
+        {
+            from{font-size: 0px;}
+            to{font-size: 105px;}
+        }
+    }
+
+    .won::after
+    {
+        color: #EF4F4F;
     }
 }
