@@ -330,3 +330,53 @@ body {
         color: #EF4F4F;
     }
 }
+
+@media only screen and (max-width: 700px) {
+    .game-cell {
+        height: 100px;
+        width: 100px;
+    }
+
+    .status-action {
+        display: none;
+    }
+
+    .x::after
+    {
+        content: "x";//"×";
+        font-size: 100px;
+
+        animation: x-animation 0.25s 1;
+
+        @keyframes x-animation
+        {
+            from{font-size: 0px;}
+            to{font-size: 105px;}
+        }
+    }
+
+    .o::after
+    {
+        content: "o";//"○";
+        color: #EEEEEE;
+        font-size: 100px;
+
+        animation: o-animation 0.25s 1;
+
+        @keyframes o-animation
+        {
+            from{font-size: 0px;}
+            to{font-size: 105px;}
+        }
+    }
+
+    .won::after
+    {
+        color: #EF4F4F;
+    }
+
+    .action
+    {
+        display: none;
+    }
+}
