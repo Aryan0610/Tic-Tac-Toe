@@ -133,10 +133,10 @@ const checkGameStatus = () =>
     { 
         console.log("9");
         gameIsLive = false;
-        statusDiv.innerHTML = "Game is Tied";
+        //statusDiv.innerHTML = "Game is Tied";
 
         gamesplayed = gamesplayed + 1;
-        gamestatus.innerHTML = `Games Played: ${gamesplayed}`;
+        //gamestatus.innerHTML = `Games Played: ${gamesplayed}`;
     }
     else
     {
@@ -156,7 +156,6 @@ const checkGameStatus = () =>
 const handleReset = (e) => 
 {
     xIsNext = true;
-    statusDiv.innerHTML = `${xSymbol} is next`;
     winner = null;
     gameIsLive = true;
     for(const cellDiv of cellDivs)
@@ -164,14 +163,15 @@ const handleReset = (e) =>
         cellDiv.classList.remove('x');
         cellDiv.classList.remove('o');
         cellDiv.classList.remove('won');
-        
-        xstatus.innerHTML = `Player x:`;
-        ostatus.innerHTML = `Player o:`;
-        gamestatus.innerHTML = `Games Played:`;
+
         xwins = 0
         owins = 0;
         gamesplayed = 0;
     }
+
+    document.getElementById('x_wins').innerHTML = xwins
+    document.getElementById('o_wins').innerHTML = owins
+    document.getElementById('games_played').innerHTML = gamesplayed
 };
 
 const handlePlayAgain = (e) => 
