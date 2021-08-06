@@ -246,6 +246,49 @@ body {
     width: 120px;
     padding: 15px;
   }
+  .x::after {
+    content: "x";
+    font-size: 120px;
+    -webkit-animation: x-animation 0.25s 1;
+            animation: x-animation 0.25s 1;
+  }
+  @-webkit-keyframes x-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 125px;
+    }
+  }
+  @keyframes x-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 125px;
+    }
+  }
+  .o::after {
+    font-size: 120px;
+    -webkit-animation: o-animation 0.25s 1;
+            animation: o-animation 0.25s 1;
+  }
+  @-webkit-keyframes o-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 125   px;
+    }
+  }
+  @keyframes o-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 125   px;
+    }
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -279,6 +322,49 @@ body {
   .action .reset, .action .play-again {
     width: 120px;
     padding: 15px;
+  }
+  .x::after {
+    content: "x";
+    font-size: 80px;
+    -webkit-animation: x-animation 0.25s 1;
+            animation: x-animation 0.25s 1;
+  }
+  @-webkit-keyframes x-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 85px;
+    }
+  }
+  @keyframes x-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 85px;
+    }
+  }
+  .o::after {
+    font-size: 80px;
+    -webkit-animation: o-animation 0.25s 1;
+            animation: o-animation 0.25s 1;
+  }
+  @-webkit-keyframes o-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 85   px;
+    }
+  }
+  @keyframes o-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 85   px;
+    }
   }
 }
 
@@ -329,6 +415,49 @@ body {
     width: 120px;
     padding: 15px;
   }
+  .x::after {
+    content: "x";
+    font-size: 60px;
+    -webkit-animation: x-animation 0.25s 1;
+            animation: x-animation 0.25s 1;
+  }
+  @-webkit-keyframes x-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 65px;
+    }
+  }
+  @keyframes x-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 65px;
+    }
+  }
+  .o::after {
+    font-size: 60px;
+    -webkit-animation: o-animation 0.25s 1;
+            animation: o-animation 0.25s 1;
+  }
+  @-webkit-keyframes o-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 65   px;
+    }
+  }
+  @keyframes o-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 65   px;
+    }
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -364,6 +493,49 @@ body {
             justify-content: center;
     -webkit-transform: translate(0%, 450%);
             transform: translate(0%, 450%);
+  }
+  .x::after {
+    content: "x";
+    font-size: 60px;
+    -webkit-animation: x-animation 0.25s 1;
+            animation: x-animation 0.25s 1;
+  }
+  @-webkit-keyframes x-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 65px;
+    }
+  }
+  @keyframes x-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 65px;
+    }
+  }
+  .o::after {
+    font-size: 60px;
+    -webkit-animation: o-animation 0.25s 1;
+            animation: o-animation 0.25s 1;
+  }
+  @-webkit-keyframes o-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 65   px;
+    }
+  }
+  @keyframes o-animation {
+    from {
+      font-size: 0px;
+    }
+    to {
+      font-size: 65   px;
+    }
   }
 }
 /*# sourceMappingURL=style.css.map */

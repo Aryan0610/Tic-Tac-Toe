@@ -177,7 +177,6 @@ const handleReset = (e) =>
 const handlePlayAgain = (e) => 
 {
     xIsNext = true;
-    statusDiv.innerHTML = `${xSymbol} is next`;
     winner = null;
     gameIsLive = true;
     for(const cellDiv of cellDivs)

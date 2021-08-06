@@ -8,14 +8,11 @@ body {
     font-family: sans-serif;
     background-color: #222831;
     color: #00ADB5;
-    //overflow: scroll;
 }
 
 .split {
     width: 100%;
-    //position: fixed;
     z-index: 1;
-    //overflow-x: hidden;
     padding-top: 20px;
 }
 
@@ -144,7 +141,7 @@ body {
 
 .x::after
 {
-    content: "x";//"×";
+    content: "x";
     font-size: 150px;
 
     animation: x-animation 0.25s 1;
@@ -158,7 +155,7 @@ body {
 
 .o::after
 {
-    content: "o";//"○";
+    content: "o";
     color: #EEEEEE;
     font-size: 150px;
 
@@ -248,12 +245,33 @@ body {
             padding: 15px;
         }
     }
+
+    .x::after
+    {
+        content: "x";
+        font-size: 120px;
+
+        animation: x-animation 0.25s 1;
+
+        @keyframes x-animation
+        {
+            from{font-size: 0px;}
+            to{font-size: 125px;}
+        }
+    }
+
+    .o::after
+    {
+        font-size: 120px;
+        animation: o-animation 0.25s 1;
+        @keyframes o-animation {
+            from{font-size: 0px;}
+            to{font-size: 125   px;}
+        }
+    }
 }
 
 @media only screen and (max-width: 850px) {
-    .split {
-        //height: 90%;
-    }
     .status-action {
         font-size: 15px;
         width: 20%;
@@ -292,12 +310,33 @@ body {
             padding: 15px;
         }
     }
+
+    .x::after
+    {
+        content: "x";
+        font-size: 80px;
+
+        animation: x-animation 0.25s 1;
+
+        @keyframes x-animation
+        {
+            from{font-size: 0px;}
+            to{font-size: 85px;}
+        }
+    }
+
+    .o::after
+    {
+        font-size: 80px;
+        animation: o-animation 0.25s 1;
+        @keyframes o-animation {
+            from{font-size: 0px;}
+            to{font-size: 85   px;}
+        }
+    }
 }
 
 @media only screen and (max-width: 700px) {
-    .split {
-        //height: 90%;
-    }
     .status-action {
         font-size: 15px;
         width: 100%;
@@ -355,6 +394,30 @@ body {
             padding: 15px;
         }
     }
+
+    .x::after
+    {
+        content: "x";
+        font-size: 60px;
+
+        animation: x-animation 0.25s 1;
+
+        @keyframes x-animation
+        {
+            from{font-size: 0px;}
+            to{font-size: 65px;}
+        }
+    }
+
+    .o::after
+    {
+        font-size: 60px;
+        animation: o-animation 0.25s 1;
+        @keyframes o-animation {
+            from{font-size: 0px;}
+            to{font-size: 65   px;}
+        }
+    }
 }
 
 @media only screen and (max-width: 700px) {
@@ -384,5 +447,29 @@ body {
         display: flex;
         justify-content: center;
         transform: translate(0%, 450%);
+    }
+
+    .x::after
+    {
+        content: "x";
+        font-size: 60px;
+
+        animation: x-animation 0.25s 1;
+
+        @keyframes x-animation
+        {
+            from{font-size: 0px;}
+            to{font-size: 65px;}
+        }
+    }
+
+    .o::after
+    {
+        font-size: 60px;
+        animation: o-animation 0.25s 1;
+        @keyframes o-animation {
+            from{font-size: 0px;}
+            to{font-size: 65   px;}
+        }
     }
 }
