@@ -37,23 +37,18 @@ const handleWin = (letter) =>
 {
     gameIsLive = false;
     winner = letter;
-    if(winner == "x")
-    {
-        statusDiv.innerHTML = `${letterToSymbol(winner)} has won!`;
+    if(winner == "x") {
         xwins = xwins + 1;
-        xstatus.innerHTML = `Player x: ${xwins}`;
+        document.getElementById('x_wins').innerHTML = xwins
 
         gamesplayed = gamesplayed + 1;
-        gamestatus.innerHTML = `Games Played: ${gamesplayed}`;
-    }
-    else
-    {
-        statusDiv.innerHTML = `<span>${letterToSymbol(winner)} has won!</span>`;
+        document.getElementById('games_played').innerHTML = gamesplayed
+    } else {
         owins = owins + 1;
-        ostatus.innerHTML = `Player o: ${owins}`;
+        document.getElementById('o_wins').innerHTML = owins
 
         gamesplayed = gamesplayed + 1;
-        gamestatus.innerHTML = `Games Played: ${gamesplayed}`;
+        document.getElementById('games_played').innerHTML = gamesplayed
     }
 }
 
@@ -68,8 +63,6 @@ const checkGameStatus = () =>
     const seven = cellDivs[6].classList[1];
     const eight = cellDivs[7].classList[1];
     const nine = cellDivs[8].classList[1];
-
-    //console.log(one, two, three, four, five, six, seven, eight, nine);
 
     //check winner
     if(one && one == two && one == three)
@@ -150,11 +143,11 @@ const checkGameStatus = () =>
         xIsNext = !xIsNext;
         if(xIsNext)
         {
-            statusDiv.innerHTML = `${xSymbol} is next`;
+            //statusDiv.innerHTML = `${xSymbol} is next`;
         }
         else
         {
-            statusDiv.innerHTML = `<span>${oSymbol} is next</span>`;
+            //statusDiv.innerHTML = `<span>${oSymbol} is next</span>`;
         }
     }
 };
