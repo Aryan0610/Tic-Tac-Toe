@@ -13,19 +13,16 @@ body {
 
 .split {
   width: 100%;
-  position: fixed;
   z-index: 1;
   padding-top: 20px;
 }
 
 .top {
   top: 0;
-  height: 10%;
 }
 
 .bottom {
-  bottom: 0;
-  height: 90%;
+  margin-top: 50px;
 }
 
 .title-container {
@@ -97,6 +94,7 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
+  margin-top: 50px;
   border-radius: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -251,9 +249,6 @@ body {
 }
 
 @media only screen and (max-width: 850px) {
-  .split {
-    height: 90%;
-  }
   .status-action {
     font-size: 15px;
     width: 20%;
@@ -288,9 +283,6 @@ body {
 }
 
 @media only screen and (max-width: 700px) {
-  .split {
-    height: 90%;
-  }
   .status-action {
     font-size: 15px;
     width: 100%;
@@ -309,6 +301,7 @@ body {
     font-size: 25px;
   }
   .container {
+    margin-top: 80px;
     height: 50%;
     width: 500px;
     float: left;
@@ -340,13 +333,37 @@ body {
 
 @media only screen and (max-width: 700px) {
   .container {
-    height: 50%;
+    height: 400px;
     width: 400px;
     float: left;
-    top: 5%;
+    top: 0%;
     left: 50%;
     -webkit-transform: translate(-50%, 0%);
             transform: translate(-50%, 0%);
+  }
+  .game-cell {
+    width: 100px;
+    height: 100px;
+  }
+  .status-action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: translate(0%, 600%);
+            transform: translate(0%, 600%);
+  }
+  .action {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: translate(0%, 450%);
+            transform: translate(0%, 450%);
   }
 }
 /*# sourceMappingURL=style.css.map */

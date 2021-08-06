@@ -2,18 +2,18 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    //overflow: hidden;
 }
 
 body {
     font-family: sans-serif;
     background-color: #222831;
     color: #00ADB5;
+    //overflow: scroll;
 }
 
 .split {
     width: 100%;
-    position: fixed;
+    //position: fixed;
     z-index: 1;
     //overflow-x: hidden;
     padding-top: 20px;
@@ -21,12 +21,10 @@ body {
 
 .top {
     top: 0;
-    height: 10%;
 }
 
 .bottom {
-    bottom: 0;
-    height: 90%;
+    margin-top: 50px;
 }
 
 .title-container {
@@ -107,6 +105,8 @@ body {
     top: 5%;
     left: 50%;
     transform: translate(-50%, 0%);
+
+    margin-top: 50px;
 
     border-radius: 25px;
 
@@ -252,7 +252,7 @@ body {
 
 @media only screen and (max-width: 850px) {
     .split {
-        height: 90%;
+        //height: 90%;
     }
     .status-action {
         font-size: 15px;
@@ -296,7 +296,7 @@ body {
 
 @media only screen and (max-width: 700px) {
     .split {
-        height: 90%;
+        //height: 90%;
     }
     .status-action {
         font-size: 15px;
@@ -318,6 +318,8 @@ body {
     }
 
     .container {
+        margin-top: 80px;
+
         height: 50%;
 
         width: 500px;
@@ -357,14 +359,30 @@ body {
 
 @media only screen and (max-width: 700px) {
     .container {
-        height: 50%;
-
+        height: 400px;
         width: 400px;
 
         float: left;
 
-        top: 5%;
+        top: 0%;
         left: 50%;
         transform: translate(-50%, 0%);
+    }
+
+    .game-cell {
+        width: 100px;
+        height: 100px;
+    }
+
+    .status-action {
+        display: flex;
+        justify-content: center;
+        transform: translate(0%, 600%);
+    }
+
+    .action {
+        display: flex;
+        justify-content: center;
+        transform: translate(0%, 450%);
     }
 }
